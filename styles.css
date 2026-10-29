@@ -1,4 +1,5 @@
 @font-face{font-family:"Montserrat";src:url("assets/fonts/montserrat-latin.woff2") format("woff2");font-style:normal;font-weight:400 900;font-display:swap}
+@font-face{font-family:"Noto Flags Color";src:url("assets/fonts/noto-flags-colrv1.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap;unicode-range:U+1F1E6-1F1FF}
 :root{--black:#000;--nav:#0d1923;--blue:#008afc;--light-blue:#5eb4e8;--white:#f4f7ff;--gold:#ffbd00;--peach:#f0b99e;--content:min(1200px,calc(100% - 40px));--header-h:76px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body,button,input,textarea,select{font-family:"Montserrat",Arial,sans-serif}body{margin:0;min-width:0;overflow-x:hidden;color:var(--white);background:#000}img{display:block;max-width:100%}a{color:inherit}button,input,textarea,select{font:inherit}.skip-link{position:fixed;z-index:1000;top:-80px;left:16px;padding:10px 15px;color:#000;background:#fff}.skip-link:focus{top:12px}
 .site-header{position:sticky;z-index:100;top:0;height:var(--header-h);background:var(--nav);border-bottom:1px solid rgba(0,138,252,.12)}.site-header__inner{width:var(--content);height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between}.site-brand{color:var(--white);font-size:42px;line-height:1;font-weight:800;text-decoration:none;letter-spacing:-.04em}.site-nav{height:100%;display:flex;align-items:center;gap:42px}.site-nav__item{position:relative;height:100%;display:flex;align-items:center}.site-nav a{color:var(--blue);text-decoration:none;font-size:16px;font-weight:500}.site-nav a.active,.site-nav a:hover{color:var(--white)}.site-subnav{position:absolute;display:none;top:68px;left:50%;width:190px;padding:9px;transform:translateX(-50%);background:#101f2b;border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 30px rgba(0,0,0,.4)}.site-nav__item:hover .site-subnav,.site-nav__item:focus-within .site-subnav{display:block}.site-subnav a{display:block;padding:10px 12px;font-size:13px}.nav-toggle{display:none;width:44px;height:44px;padding:9px;border:0;background:transparent}.nav-toggle span{display:block;height:2px;margin:6px 0;background:#fff;transition:.2s}
@@ -46,6 +47,7 @@
 @media(max-width:560px){.members-page{padding-bottom:28px}.member-board{margin-top:28px}}
 .award-copy{box-shadow:0 12px 30px rgba(0,0,0,.22)}
 .award-event a{color:inherit;text-decoration:underline;text-underline-offset:.12em}.award-event a:hover{opacity:.8}
+.award-event__flag{font-family:"Noto Flags Color","Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif;font-variant-emoji:emoji;font-weight:400;font-style:normal}
 
 /* Wix-style button color swap */
 :where(.wix-button,a.robot-pill,.season-switcher a,.footer-social a,.nav-toggle){cursor:pointer;transform:scale(1);transition:font-size .2s ease,transform .14s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease,color .2s ease}
@@ -150,3 +152,22 @@ a.robot-pill:hover{background:var(--button-accent);color:#071018;border-color:#0
 .group-team-photo--ultimate{width:min(650px,95%)}
 .group-team-photo--ultimate img{margin-top:-12%}
 @media(max-width:700px){.group-team-photo{padding:7px 8px 0;border-radius:16px}}
+
+/* Current-season sponsors: equal visual canvases on the page and footer */
+.sponsor-current--grid{width:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;gap:12px}
+.sponsor-current--grid img{width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.footer-logos--current{width:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;gap:2px}
+.footer-logos--current img{width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+@media(max-width:700px){.sponsor-current--grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.footer-logos--current{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Center incomplete final rows in picture collections */
+.member-board{display:flex;flex-wrap:wrap;justify-content:center}
+.member-card{flex:0 0 calc((100% - 56px)/5)}
+.sponsor-current--grid{display:flex;flex-flow:row wrap;justify-content:center}
+.sponsor-current--grid img{width:auto;min-width:0;flex:0 0 calc((100% - 48px)/5)}
+.footer-logos--current{display:flex;flex-flow:row wrap;justify-content:center}
+.footer-logos--current img{width:auto;min-width:0;flex:0 0 calc((100% - 8px)/5)}
+@media(max-width:900px){.member-card{flex-basis:calc((100% - 20px)/3)}.sponsor-grid{display:flex;flex-wrap:wrap;justify-content:center}.sponsor-grid>.sponsor-logo{min-width:0;flex:0 0 calc((100% - 20px)/3)}.sponsor-grid>.sponsor-logo:first-child{flex-basis:100%}}
+@media(max-width:700px){.sponsor-current--grid img{flex-basis:calc((100% - 16px)/3)}.footer-logos--current img{flex-basis:calc((100% - 4px)/3)}}
+@media(max-width:560px){.member-card{flex-basis:calc((100% - 10px)/2)}.sponsor-grid>.sponsor-logo{flex-basis:calc((100% - 8px)/2)}.sponsor-grid>.sponsor-logo:first-child{flex-basis:100%}}
+@media(max-width:380px){.sponsor-grid>.sponsor-logo{flex-basis:100%}}
