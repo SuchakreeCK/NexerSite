@@ -2,8 +2,13 @@
 @font-face{font-family:"Noto Flags Color";src:url("assets/fonts/noto-flags-colrv1.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap;unicode-range:U+1F1E6-1F1FF}
 :root{
   --black:#000;
-  --nav:#081019;
-  --blue:#008afc;
+  --nav:#040e20;
+  --ocean-deep:#030b1a;
+  --ocean-navy:#06142c;
+  --ocean-text:#60a5fa;
+  --ocean-glow:#3b82f6;
+  --ocean-indigo:#1d4ed8;
+  --blue:#1d6ee5;
   --light-blue:#5eb4e8;
   --cyan:#38bdf8;
   --teal:#2dd4bf;
@@ -23,17 +28,17 @@ button,input,textarea,select{font:inherit}
 .skip-link{position:fixed;z-index:1000;top:-80px;left:16px;padding:10px 15px;color:#000;background:#fff;transition:top .2s ease}
 .skip-link:focus{top:12px}
 
-/* HEADER & NAVIGATION */
+/* HEADER & NAVIGATION (DEEP SEA INDIGO / OCEAN NAVY) */
 .site-header{
   position:sticky;
   z-index:100;
   top:0;
   height:var(--header-h);
-  background:rgba(8,16,25,0.88);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(56,189,248,0.18);
-  box-shadow:0 4px 24px rgba(0,0,0,0.5);
+  background:rgba(2,6,16,0.96);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(37,99,235,0.18);
+  box-shadow:0 4px 30px rgba(1,3,10,0.8);
 }
 .site-header__inner{
   width:var(--content);
@@ -61,7 +66,8 @@ button,input,textarea,select{font:inherit}
   font-size:14px;
   font-weight:700;
   letter-spacing:.06em;
-  color:var(--cyan);
+  color:var(--ocean-text);
+  text-shadow:0 0 14px rgba(59,130,246,0.45);
 }
 .site-nav{
   height:100%;
@@ -77,7 +83,7 @@ button,input,textarea,select{font:inherit}
 }
 .site-nav a{
   position:relative;
-  color:#94a6bc;
+  color:#869db6;
   text-decoration:none;
   font-size:15px;
   font-weight:600;
@@ -94,9 +100,9 @@ button,input,textarea,select{font:inherit}
   left:0;
   right:0;
   height:2px;
-  background:linear-gradient(90deg,var(--blue),var(--cyan));
+  background:linear-gradient(90deg,var(--ocean-indigo),var(--ocean-text));
   border-radius:2px;
-  box-shadow:0 0 8px rgba(56,189,248,0.8);
+  box-shadow:0 0 10px rgba(59,130,246,0.7);
 }
 .site-subnav{
   position:absolute;
@@ -106,11 +112,11 @@ button,input,textarea,select{font:inherit}
   width:200px;
   padding:8px;
   transform:translateX(-50%);
-  background:rgba(12,22,34,0.95);
+  background:rgba(4,14,32,0.96);
   backdrop-filter:blur(14px);
-  border:1px solid rgba(56,189,248,0.22);
+  border:1px solid rgba(59,130,246,0.25);
   border-radius:12px;
-  box-shadow:0 18px 40px rgba(0,0,0,0.6);
+  box-shadow:0 18px 40px rgba(0,0,0,0.65);
 }
 .site-nav__item:hover .site-subnav, .site-nav__item:focus-within .site-subnav{
   display:block;
@@ -120,11 +126,11 @@ button,input,textarea,select{font:inherit}
   padding:9px 12px;
   font-size:13px;
   border-radius:8px;
-  color:#a5b8cc;
+  color:#a5bdd8;
   transition:background-color .2s ease, color .2s ease;
 }
 .site-subnav a:hover{
-  background:rgba(0,138,252,0.15);
+  background:rgba(37,99,235,0.22);
   color:#fff;
 }
 .nav-toggle{
@@ -144,7 +150,7 @@ button,input,textarea,select{font:inherit}
   transition:.2s;
 }
 
-/* HIGH-TECH HERO */
+/* HIGH-TECH HERO (DEEP SEA INDIGO / ABYSSAL OCEAN - DARKER & DEEPER) */
 .home-hero{
   position:relative;
   min-height:760px;
@@ -152,16 +158,18 @@ button,input,textarea,select{font:inherit}
   display:grid;
   place-items:center;
   text-align:center;
-  background:linear-gradient(180deg,rgba(7,14,23,0.7) 0%,rgba(4,8,13,0.88) 60%,#000 100%),url("assets/backgrounds/home-bg.jpg") center/cover no-repeat;
+  background:
+    linear-gradient(180deg, rgba(2,6,15,0.92) 0%, rgba(3,10,24,0.94) 35%, rgba(1,4,12,0.98) 70%, #000205 100%),
+    url("assets/backgrounds/home-bg.jpg") center/cover no-repeat;
   overflow:hidden;
 }
 .home-hero__ambient{
   position:absolute;
   inset:0;
   background-image:
-    radial-gradient(circle at 50% 15%,rgba(0,138,252,0.22) 0%,transparent 60%),
-    linear-gradient(to right,rgba(255,255,255,0.03) 1px,transparent 1px),
-    linear-gradient(to bottom,rgba(255,255,255,0.03) 1px,transparent 1px);
+    radial-gradient(circle at 50% 12%, rgba(26,62,175,0.25) 0%, rgba(15,35,95,0.12) 35%, transparent 65%),
+    linear-gradient(to right, rgba(96,165,250,0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(96,165,250,0.02) 1px, transparent 1px);
   background-size:100% 100%, 44px 44px, 44px 44px;
   pointer-events:none;
 }
@@ -182,14 +190,14 @@ button,input,textarea,select{font:inherit}
   font-size:12px;
   font-weight:700;
   letter-spacing:.1em;
-  color:rgba(255,255,255,0.92);
+  color:rgba(215,230,250,0.9);
 }
 .hero-status-badge__dot{
   width:7px;
   height:7px;
   border-radius:50%;
-  background:var(--cyan);
-  box-shadow:0 0 10px var(--cyan);
+  background:#2563eb;
+  box-shadow:0 0 10px #2563eb, 0 0 16px rgba(37,99,235,0.5);
   animation:pulse-glow 2s infinite ease-in-out;
 }
 @keyframes pulse-glow{
@@ -197,11 +205,11 @@ button,input,textarea,select{font:inherit}
   50%{opacity:.4;transform:scale(.8)}
 }
 .hero-status-badge__sep{
-  color:rgba(255,255,255,0.3);
+  color:rgba(255,255,255,0.25);
   font-size:10px;
 }
 .hero-status-badge__school{
-  color:var(--cyan);
+  color:var(--ocean-text);
   font-weight:700;
 }
 .home-hero__logo-wrap{
@@ -212,7 +220,7 @@ button,input,textarea,select{font:inherit}
 .home-hero__logo{
   width:min(460px,76vw);
   margin:0 auto;
-  filter:drop-shadow(0 0 32px rgba(0,138,252,0.36));
+  filter:drop-shadow(0 0 30px rgba(26,62,175,0.38));
 }
 .home-hero__title{
   margin:0 0 10px;
@@ -222,24 +230,24 @@ button,input,textarea,select{font:inherit}
   letter-spacing:-.03em;
 }
 .title-glow{
-  background:linear-gradient(135deg,#fff 30%,#7ac0e6 75%,var(--blue) 100%);
+  background:linear-gradient(135deg, #ffffff 20%, #7ca8e8 50%, #2563eb 78%, #172554 100%);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 .title-num{
   font-size:.65em;
   font-weight:800;
-  color:var(--cyan);
+  color:#5b9cf6;
   vertical-align:super;
   margin-left:4px;
-  text-shadow:0 0 16px rgba(56,189,248,0.4);
+  text-shadow:0 0 18px rgba(29,78,216,0.5);
 }
 .home-hero__tagline{
   max-width:680px;
   margin:0 auto 36px;
   font-size:clamp(14px,1.8vw,17px);
   line-height:1.45;
-  color:#a3b8cd;
+  color:#8ba3bd;
   font-weight:500;
 }
 
@@ -495,28 +503,25 @@ button,input,textarea,select{font:inherit}
 .graphic-card--members:hover .members-group-photo{
   transform:scale(1.08);
 }
-.graphic-card--members .graphic-card__icon-wrap{
-  color:var(--cyan);
-}
 .graphic-card--members:hover{
-  border-color:rgba(0,138,252,0.65);
-  box-shadow:0 20px 48px -8px rgba(0,138,252,0.38), 0 0 25px rgba(56,189,248,0.25);
+  border-color:rgba(59,130,246,0.7);
+  box-shadow:0 20px 48px -8px rgba(29,78,216,0.45), 0 0 25px rgba(59,130,246,0.28);
 }
 .graphic-card--members:hover .hud-corner{
-  border-color:var(--cyan);
+  border-color:var(--ocean-text);
 }
 .graphic-card--members:hover .graphic-card__badge{
-  border-color:var(--cyan);
-  color:var(--cyan);
+  border-color:var(--ocean-text);
+  color:var(--ocean-text);
 }
 .graphic-card--members:hover .graphic-card__title{
-  color:var(--cyan);
+  color:var(--ocean-text);
 }
 .graphic-card--members:hover .graphic-card__cta{
-  background:linear-gradient(135deg,var(--blue),var(--cyan));
-  border-color:var(--cyan);
+  background:linear-gradient(135deg,var(--ocean-indigo),var(--ocean-glow));
+  border-color:var(--ocean-text);
   color:#fff;
-  box-shadow:0 0 16px rgba(0,138,252,0.5);
+  box-shadow:0 0 16px rgba(37,99,235,0.55);
 }
 
 /* --- CARD 3: ROBOTS (TEAL NEON ACCENTS & FLOATING ROBOT) --- */
