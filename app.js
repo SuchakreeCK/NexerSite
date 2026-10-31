@@ -99,7 +99,7 @@ const awards = [
 
 function renderAwards() {
   document.querySelector("#awards-list").innerHTML = awards.map(item => `
-    <section class="award-block ${item.peach ? "award-block--peach" : ""}" style="background-image:linear-gradient(rgba(0,0,0,.12),rgba(0,0,0,.12)),url('${A + item.bg}')"><div class="award-block__inner">
+    <section class="award-block ${item.peach ? "award-block--peach" : ""}" style="background-image:linear-gradient(180deg, rgba(2,6,15,0.88) 0%, rgba(3,10,24,0.84) 45%, rgba(1,4,12,0.94) 100%),url('${A + item.bg}')"><div class="award-block__inner">
       <div class="award-copy"><h2>${item.year} ${item.game}</h2><p class="award-event">${item.eventUrl ? `<a href="${item.eventUrl}" target="_blank" rel="noopener" aria-label="${item.event} official FIRST event page">${item.travel ? `<span class="award-event__travel" role="img" aria-label="Flight to the United States">🛫<span class="award-event__flag" aria-hidden="true">🇺🇸</span></span> ` : ""}${item.event}</a>` : `<u>${item.event}</u>`}</p><p>${item.team}</p><ul>${item.wins.map(win => `<li>${win}</li>`).join("")}</ul></div>
       <div class="award-gallery">${item.images.map((img, i) => `<img src="${A + img}" alt="${item.game} event photo ${i + 1}" loading="lazy">`).join("")}</div>
     </div></section>`).join("");
@@ -119,7 +119,7 @@ function renderMembers(){
   const requested=new URLSearchParams(location.search).get("season")||"2026-27";const season=members[requested]?requested:"2026-27";
   const membersPage=document.querySelector(".members-page");
   membersPage.dataset.season=season;
-  membersPage.style.backgroundImage=`linear-gradient(rgba(0,0,0,.26),rgba(0,0,0,.26)),url("${A+memberBackgrounds[season]}")`;
+  membersPage.style.backgroundImage=`linear-gradient(180deg, rgba(2,6,15,0.90) 0%, rgba(3,10,24,0.85) 45%, rgba(1,4,12,0.95) 100%),url("${A+memberBackgrounds[season]}")`;
   document.querySelector("#members-season-title").textContent=formatSeasonTitle(season);
   renderSeasonArrows(memberSeasonLinks,season,"member");
   document.querySelector("#member-season-switcher").innerHTML=Object.keys(members).map(key=>`<a class="${key===season?"active":""}" href="members.html?season=${key}">${key.replace("-","–")}</a>`).join("");
@@ -136,7 +136,7 @@ const robots = [
   {year:"2021-2022",name:"Frank",game:"Freight Frenzy",image:"robots/robot-frank.png",bg:"backgrounds/bg-freight.jpg",description:"Designed for precision, stability and strength."},
   {year:"2020-2021",name:"George",game:"ULTIMATE GOAL",image:"robots/robot-george.png",bg:"backgrounds/bg-ultimate.jpg",description:"Designed to be concise, accurate, and easy to maintain."}
 ];
-function renderRobots(){document.querySelector("#robot-grid").innerHTML=robots.map(robot=>`<article class="robot-season ${robot.gold?"robot-season--gold":""}" style="background-image:url('${A+robot.bg}')"><h2>${robot.year}</h2><p class="robot-intro">Meet <strong>\"${robot.name}\"</strong>, our ${robot.year} FIRST® Tech Challenge season '${robot.game}' robot.</p><div class="robot-card"><img src="${A+robot.image}" alt="${robot.name} robot">${robot.link?`<a class="robot-pill" href="${robot.link}" target="_blank" rel="noopener">${robot.name} : ${robot.year}</a>`:`<span class="robot-pill">${robot.name} : ${robot.year}</span>`}<p class="robot-description">${robot.description}</p>${robot.download?`<p class="robot-download">${robot.download}</p>`:""}</div></article>`).join("")}
+function renderRobots(){document.querySelector("#robot-grid").innerHTML=robots.map(robot=>`<article class="robot-season ${robot.gold?"robot-season--gold":""}" style="background-image:linear-gradient(180deg, rgba(2,6,15,0.88) 0%, rgba(3,10,24,0.84) 45%, rgba(1,4,12,0.94) 100%),url('${A+robot.bg}')"><h2>${robot.year}</h2><p class="robot-intro">Meet <strong>\"${robot.name}\"</strong>, our ${robot.year} FIRST® Tech Challenge season '${robot.game}' robot.</p><div class="robot-card"><img src="${A+robot.image}" alt="${robot.name} robot">${robot.link?`<a class="robot-pill" href="${robot.link}" target="_blank" rel="noopener">${robot.name} : ${robot.year}</a>`:`<span class="robot-pill">${robot.name} : ${robot.year}</span>`}<p class="robot-description">${robot.description}</p>${robot.download?`<p class="robot-download">${robot.download}</p>`:""}</div></article>`).join("")}
 
 function renderSponsors(){
   const requested=new URLSearchParams(location.search).get("season")||"2026-27";const season=["2026-27","2025-26","2024-25"].includes(requested)?requested:"2026-27";
@@ -146,8 +146,8 @@ function renderSponsors(){
   const board=document.querySelector("#sponsor-board");
   const sponsorBackgrounds={"2026-27":"backgrounds/bg-members.jpg","2025-26":"backgrounds/bg-decode.jpg","2024-25":"backgrounds/bg-into-deep.png"};
   const seasonBackground=A+sponsorBackgrounds[season];
-  document.querySelector(".sponsors-page").style.backgroundImage=`linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.34)),url("${seasonBackground}")`;
-  board.style.backgroundImage=`linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),url("${seasonBackground}")`;
+  document.querySelector(".sponsors-page").style.backgroundImage=`linear-gradient(180deg, rgba(2,6,15,0.88) 0%, rgba(3,10,24,0.84) 40%, rgba(1,4,12,0.95) 100%),url("${seasonBackground}")`;
+  board.style.backgroundImage=`linear-gradient(180deg, rgba(2,7,18,0.90) 0%, rgba(3,10,24,0.90) 100%),url("${seasonBackground}")`;
   const sponsorOrder=[3,1,2,4,5,10,11,6,7,8,9,12,13];
   const outlinedSponsors=new Set([1,9,11,13]); // 80% dark-edge cutoff, plus the tree-logo exception.
   const sponsorFile=number=>number===3?"sponsor-featured-2526-03.png":`sponsor-fit-2526-${String(number).padStart(2,"0")}.png`;
