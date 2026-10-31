@@ -3,28 +3,198 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0c1721">
+  <meta name="theme-color" content="#070e17">
   <meta name="description" content="NEXER #22641 — FIRST Tech Challenge robotics team from The Prince's Royal College.">
   <title>Home | NEXER</title>
   <link rel="icon" href="assets/branding/nexer-logo.png">
+  <link rel="preload" as="image" href="assets/awards/award-2223-2.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/members/team-2627-group.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/robots/robot-bolt.png" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="home">
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="site-header"></div>
   <main id="main">
+    <!-- HERO SECTION (Cool Header & Hero Top + 4 Graphic Buttons) -->
     <section class="home-hero">
+      <div class="home-hero__ambient" aria-hidden="true"></div>
       <div class="home-hero__content">
-        <img src="assets/branding/nexer-logo.png" alt="NEXER 22641" class="home-hero__logo">
-        <h1>NEXER 22641</h1>
-        <nav class="home-hero__links" aria-label="Explore NEXER">
-          <a href="awards.html" class="wix-button">Awards</a>
-          <a href="members.html" class="wix-button">Members</a>
-          <a href="robots.html" class="wix-button">Robots</a>
-          <a href="sponsors.html" class="wix-button">Sponsors</a>
+        <div class="hero-status-badge">
+          <span class="hero-status-badge__dot"></span>
+          <span>FIRST® TECH CHALLENGE #22641</span>
+          <span class="hero-status-badge__sep">•</span>
+          <span class="hero-status-badge__school">THE PRINCE'S ROYAL COLLEGE</span>
+        </div>
+
+        <div class="home-hero__logo-wrap">
+          <img src="assets/branding/nexer-logo.png" alt="NEXER 22641" class="home-hero__logo">
+        </div>
+
+        <h1 class="home-hero__title">
+          <span class="title-glow">NEXER</span>
+          <span class="title-num">#22641</span>
+        </h1>
+        <p class="home-hero__tagline">Engineering the Next Era of Youth Robotics • Driven by Gracious Professionalism® &amp; Kindness</p>
+
+        <!-- 4 GRAPHIC ACTION BUTTONS (LATEST SEASON MEDIA) -->
+        <nav class="hero-graphic-nav" aria-label="Explore NEXER Sections">
+          <!-- CARD 1: AWARDS (2022–2023 POWERPLAY WORLD CHAMPIONSHIP FIELD) -->
+          <a href="awards.html" class="graphic-card graphic-card--awards">
+            <div class="graphic-card__bg graphic-card__bg--awards">
+              <img src="assets/awards/award-2223-2.jpg" alt="POWERPLAY World Championship" class="awards-bg-photo" fetchpriority="high">
+            </div>
+            <div class="graphic-card__scrim"></div>
+            <div class="graphic-card__sheen" aria-hidden="true"></div>
+            <div class="graphic-card__hud" aria-hidden="true">
+              <span class="hud-corner hud-corner--tl"></span>
+              <span class="hud-corner hud-corner--br"></span>
+            </div>
+            <div class="graphic-card__top">
+              <span class="graphic-card__badge">2022–2023 // POWERPLAY</span>
+              <div class="graphic-card__icon-wrap">
+                <!-- ICON: Bold geometric trophy with laurel wings -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3v10" stroke-width="2"/>
+                  <path d="M8 13c0 2.21 1.79 4 4 4s4-1.79 4-4" fill="none"/>
+                  <path d="M5 6.5C3.5 7.5 3 9.5 4.5 11S8 12 8 13"/>
+                  <path d="M19 6.5C20.5 7.5 21 9.5 19.5 11S16 12 16 13"/>
+                  <path d="M9.5 21h5M12 17v4"/>
+                  <path d="M8 3h8" stroke-width="1.4"/>
+                  <path d="M8 3c0 4 1.5 7 4 10 2.5-3 4-6 4-10"/>
+                  <circle cx="12" cy="3" r="0" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+            <div class="graphic-card__bottom">
+              <h2 class="graphic-card__title">Awards</h2>
+              <p class="graphic-card__desc">World Championship Arena • Houston, Texas</p>
+              <div class="graphic-card__cta">
+                <span>Explore Awards</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- CARD 2: MEMBERS (LATEST 2026–2027 ROSTER) -->
+          <a href="members.html" class="graphic-card graphic-card--members">
+            <div class="graphic-card__bg graphic-card__bg--members">
+              <img src="assets/members/team-2627-group.jpg" alt="NEXER Team 2026-27" class="members-group-photo" fetchpriority="high">
+            </div>
+            <div class="graphic-card__scrim"></div>
+            <div class="graphic-card__sheen" aria-hidden="true"></div>
+            <div class="graphic-card__hud" aria-hidden="true">
+              <span class="hud-corner hud-corner--tl"></span>
+              <span class="hud-corner hud-corner--br"></span>
+            </div>
+            <div class="graphic-card__top">
+              <span class="graphic-card__badge">2026–2027 // ROSTER</span>
+              <div class="graphic-card__icon-wrap">
+                <!-- ICON: Geometric people silhouette — minimal & bold -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="6" r="2.5"/>
+                  <path d="M3 20v-1.5A4.5 4.5 0 0 1 7.5 14h3A4.5 4.5 0 0 1 15 18.5V20"/>
+                  <circle cx="17" cy="7" r="2"/>
+                  <path d="M14.5 14.5c.8-.3 1.6-.5 2.5-.5A4 4 0 0 1 21 18v2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="graphic-card__bottom">
+              <h2 class="graphic-card__title">Members</h2>
+              <p class="graphic-card__desc">Builders, Coders, Drivers &amp; Designers</p>
+              <div class="graphic-card__cta">
+                <span>Meet The Crew</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- CARD 3: ROBOTS (LATEST 2025–2026 ROBOT BOLT) -->
+          <a href="robots.html" class="graphic-card graphic-card--robots">
+            <div class="graphic-card__bg graphic-card__bg--robots">
+              <div class="robot-blueprint-grid" aria-hidden="true"></div>
+              <img src="assets/robots/robot-bolt.png" alt="Robot Bolt 2025-2026 3D Model" class="graphic-card__robot-img" fetchpriority="high">
+            </div>
+            <div class="graphic-card__scrim"></div>
+            <div class="graphic-card__sheen" aria-hidden="true"></div>
+            <div class="graphic-card__hud" aria-hidden="true">
+              <span class="hud-corner hud-corner--tl"></span>
+              <span class="hud-corner hud-corner--br"></span>
+            </div>
+            <div class="graphic-card__top">
+              <span class="graphic-card__badge">2025–2026 // DECODE</span>
+              <div class="graphic-card__icon-wrap">
+                <!-- ICON: Mechanical arm / gear drive — engineering feel -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+                  <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+                </svg>
+              </div>
+            </div>
+            <div class="graphic-card__bottom">
+              <h2 class="graphic-card__title">Robots</h2>
+              <p class="graphic-card__desc">Robot "Bolt" • Precision CAD &amp; Engineering</p>
+              <div class="graphic-card__cta">
+                <span>Inspect CAD</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- CARD 4: SPONSORS (LATEST 2026–2027 SUPPORTERS - 5 OVERLAPPING 3D BADGES) -->
+          <a href="sponsors.html" class="graphic-card graphic-card--sponsors">
+            <div class="graphic-card__bg graphic-card__bg--sponsors">
+              <div class="sponsor-overlap-stack" aria-hidden="true">
+                <div class="sponsor-stack-glow"></div>
+                <!-- 5 Large Overlapping Sponsor Badges -->
+                <div class="sponsor-stack-item sponsor-stack-item--2" title="OZONE360">
+                  <img src="assets/sponsors/sponsor-fit-2627-ozone360.png" alt="OZONE360">
+                </div>
+                <div class="sponsor-stack-item sponsor-stack-item--3" title="Nombangkruay">
+                  <img src="assets/sponsors/sponsor-fit-2627-nombangkruay.png" alt="Nombangkruay">
+                </div>
+                <div class="sponsor-stack-item sponsor-stack-item--4" title="ATVISION">
+                  <img src="assets/sponsors/sponsor-fit-2526-08.png" alt="ATVISION">
+                </div>
+                <div class="sponsor-stack-item sponsor-stack-item--1" title="TISSUS">
+                  <img src="assets/sponsors/sponsor-fit-2627-tissus.png" alt="TISSUS">
+                </div>
+                <div class="sponsor-stack-item sponsor-stack-item--5" title="Ban Achid">
+                  <img src="assets/sponsors/sponsor-fit-partner-ban-achid.png" alt="Ban Achid">
+                </div>
+                <div class="sponsor-stack-count">5 OFFICIAL PARTNERS</div>
+              </div>
+            </div>
+            <div class="graphic-card__scrim"></div>
+            <div class="graphic-card__sheen" aria-hidden="true"></div>
+            <div class="graphic-card__hud" aria-hidden="true">
+              <span class="hud-corner hud-corner--tl"></span>
+              <span class="hud-corner hud-corner--br"></span>
+            </div>
+            <div class="graphic-card__top">
+              <span class="graphic-card__badge">2026–2027 // PARTNERS</span>
+              <div class="graphic-card__icon-wrap">
+                <!-- ICON: Star / Partnership crest -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="graphic-card__bottom">
+              <h2 class="graphic-card__title">Sponsors</h2>
+              <p class="graphic-card__desc">All 5 Official Supporters &amp; Partners</p>
+              <div class="graphic-card__cta">
+                <span>Our Partners</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
         </nav>
       </div>
     </section>
+
+    <!-- ORIGINAL VALUES SECTION -->
     <section class="values" aria-label="Our values">
       <div class="values__inner">
         <article class="value">
@@ -41,6 +211,8 @@
         </article>
       </div>
     </section>
+
+    <!-- ORIGINAL ABOUT US SECTION -->
     <section class="home-about" id="about">
       <div class="home-about__inner">
         <div class="home-about__copy">
@@ -49,6 +221,64 @@
           <a class="wix-button wix-button--small" href="members.html">Our members</a>
         </div>
         <img class="home-about__logo" src="assets/branding/nexer-logo.png" alt="NEXER 22641">
+      </div>
+    </section>
+
+    <!-- INSTAGRAM FEED SECTION -->
+    <section class="home-instagram" id="instagram" aria-label="NEXER Instagram Feed">
+      <div class="home-instagram__inner">
+        <header class="home-instagram__header">
+          <div class="instagram-handle-badge">
+            <svg class="instagram-glyph" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+            </svg>
+            <span>@nexer22641</span>
+          </div>
+          <h2 class="home-instagram__title">Follow Our Journey</h2>
+          <p class="home-instagram__desc">Live updates, tournament highlights, CAD build sessions &amp; team moments directly from our Instagram feed.</p>
+          <a class="instagram-btn" href="https://www.instagram.com/nexer22641/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+            </svg>
+            <span>Follow on Instagram</span>
+          </a>
+        </header>
+
+        <!-- INSTAGRAM POSTS EMBED CONTAINER (COMPACT SINGLE-ROW) -->
+        <div class="instagram-feed-grid" id="instagram-feed-grid">
+          <!-- POST 1: DDlOrB0vQfl -->
+          <div class="instagram-embed-card">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DDlOrB0vQfl/" data-instgrm-version="14">
+              <iframe class="instagram-embed-frame" src="https://www.instagram.com/p/DDlOrB0vQfl/embed" scrolling="no" allowtransparency="true" frameborder="0" loading="lazy" title="NEXER Instagram Post: DDlOrB0vQfl"></iframe>
+            </blockquote>
+          </div>
+
+          <!-- POST 2: DDhavIkvopj -->
+          <div class="instagram-embed-card">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DDhavIkvopj/" data-instgrm-version="14">
+              <iframe class="instagram-embed-frame" src="https://www.instagram.com/p/DDhavIkvopj/embed" scrolling="no" allowtransparency="true" frameborder="0" loading="lazy" title="NEXER Instagram Post: DDhavIkvopj"></iframe>
+            </blockquote>
+          </div>
+
+          <!-- POST 3: DRPoCMCDzGk -->
+          <div class="instagram-embed-card">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DRPoCMCDzGk/" data-instgrm-version="14">
+              <iframe class="instagram-embed-frame" src="https://www.instagram.com/p/DRPoCMCDzGk/embed" scrolling="no" allowtransparency="true" frameborder="0" loading="lazy" title="NEXER Instagram Post: DRPoCMCDzGk"></iframe>
+            </blockquote>
+          </div>
+
+          <!-- POST 4: DQwY7hPj2zV -->
+          <div class="instagram-embed-card">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQwY7hPj2zV/" data-instgrm-version="14">
+              <iframe class="instagram-embed-frame" src="https://www.instagram.com/p/DQwY7hPj2zV/embed" scrolling="no" allowtransparency="true" frameborder="0" loading="lazy" title="NEXER Instagram Post: DQwY7hPj2zV"></iframe>
+            </blockquote>
+          </div>
+        </div>
+        <script async src="//www.instagram.com/embed.js"></script>
       </div>
     </section>
   </main>
