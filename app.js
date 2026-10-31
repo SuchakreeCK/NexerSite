@@ -51,25 +51,81 @@ function renderSeasonArrows(seasons,currentSeason,sectionName){
   if(next)header.insertAdjacentHTML("beforeend",`<a class="season-arrow season-arrow--previous" href="${next.href}" aria-label="Next ${sectionName} season: ${next.season.replace("-","–")}" title="${next.season.replace("-","–")}">${leftArrow}</a>`);
 }
 
+const navIcons = {
+  home: `<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  awards: `<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+  members: `<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  robots: `<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="16" y1="16" x2="16.01" y2="16"/></svg>`,
+  sponsors: `<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`
+};
+
 function renderHeader() {
   document.querySelector("#site-header").innerHTML = `
     <header class="site-header"><div class="site-header__inner">
       <a class="site-brand" href="index.html">NEXER</a>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="site-nav" aria-label="Primary navigation">
-        ${navItems.map(([id, label, href, children]) => `<div class="site-nav__item"><a class="${page === id || (id === "members" && page === "members-group") ? "active" : ""}" href="${href}">${label}</a>${children ? `<div class="site-subnav">${children.map(([text, url]) => `<a href="${url}">${text}</a>`).join("")}</div>` : ""}</div>`).join("")}
+        <div class="site-nav__list">
+          ${navItems.map(([id, label, href, children]) => {
+            const isActive = page === id || (id === "members" && page === "members-group");
+            return `<div class="site-nav__item${children ? " has-subnav" : ""}${isActive ? " active-parent" : ""}">
+              <div class="site-nav__link-wrap">
+                <a class="${isActive ? "active" : ""}" href="${href}">
+                  ${navIcons[id] || ""}
+                  <span>${label}</span>
+                </a>
+                ${children ? `<button class="subnav-toggle" type="button" aria-label="Toggle ${label} seasons" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>` : ""}
+              </div>
+              ${children ? `<div class="site-subnav">${children.map(([text, url]) => `<a href="${url}">${text}</a>`).join("")}</div>` : ""}
+            </div>`;
+          }).join("")}
+        </div>
       </nav>
+      <div class="nav-backdrop"></div>
     </div></header>`;
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".site-nav");
+  const backdrop = document.querySelector(".nav-backdrop");
+
+  function closeNav() {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+    document.body.classList.remove("nav-open");
+  }
+
   toggle.addEventListener("click", () => {
     const open = toggle.getAttribute("aria-expanded") !== "true";
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
     nav.classList.toggle("open", open);
+    document.body.classList.toggle("nav-open", open);
   });
+
+  if (backdrop) {
+    backdrop.addEventListener("click", closeNav);
+  }
+
+  document.querySelectorAll(".subnav-toggle").forEach(btn => {
+    btn.addEventListener("click", event => {
+      event.preventDefault();
+      event.stopPropagation();
+      const item = btn.closest(".site-nav__item");
+      const isExpanded = item.classList.toggle("subnav-open");
+      btn.setAttribute("aria-expanded", String(isExpanded));
+    });
+  });
+
   nav.addEventListener("click", event => {
-    if (event.target.closest("a")) { nav.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }
+    if (event.target.closest("a")) {
+      closeNav();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && nav.classList.contains("open")) {
+      closeNav();
+    }
   });
 }
 
