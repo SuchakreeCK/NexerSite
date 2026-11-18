@@ -1315,7 +1315,7 @@ button,input,textarea,select{font:inherit}
 .season-switcher{display:none!important}
 .sponsors-page{min-height:0}
 .sponsor-current--grid{width:100%;display:flex;flex-flow:row wrap;justify-content:center;align-items:center;gap:12px}
-.sponsor-current--grid img{width:auto;min-width:0;flex:0 0 calc((100% - 48px)/5);aspect-ratio:1;object-fit:contain}
+.sponsor-current--grid img{width:auto;min-width:0;flex:0 0 calc((100% - 60px)/6);max-width:180px;aspect-ratio:1;object-fit:contain}
 
 /* FOOTER */
 .site-footer{
@@ -1421,12 +1421,13 @@ button,input,textarea,select{font:inherit}
   flex-flow:row wrap;
   justify-content:center;
   align-items:center;
-  gap:2px;
+  gap:8px;
 }
 .footer-logos--current img{
   width:auto;
   min-width:0;
-  flex:0 0 calc((100% - 8px)/5);
+  flex:0 0 calc((100% - 40px)/6);
+  max-width:160px;
   aspect-ratio:1;
   object-fit:contain;
 }
@@ -1794,7 +1795,7 @@ button,input,textarea,select{font:inherit}
 
 @media(max-width:700px){
   .sponsor-current--grid img{flex-basis:calc((100% - 16px)/3)}
-  .footer-logos--current img{flex-basis:calc((100% - 4px)/3)}
+  .footer-logos--current img{flex-basis:calc((100% - 16px)/3)}
   .members-group-page{min-height:0;padding-bottom:32px;background-attachment:scroll}
   .group-members-board{width:min(100% - 24px,620px);margin-top:32px;padding:16px;border-radius:22px}
   .group-photo-placeholder{width:100%;aspect-ratio:16/10;border-radius:16px}
@@ -1865,6 +1866,8 @@ button,input,textarea,select{font:inherit}
   .sponsor-current img{width:170px}
   .sponsor-grid>.sponsor-logo{flex-basis:calc((100% - 8px)/2)}
   .sponsor-grid>.sponsor-logo:first-child{flex-basis:100%}
+  .sponsor-current--grid img{flex-basis:calc((100% - 12px)/2)}
+  .footer-logos--current img{flex-basis:calc((100% - 8px)/2)}
   .footer-title{font-size:21px}
   .footer-title img{width:80px}
   .footer-thanks h2{font-size:22px}
